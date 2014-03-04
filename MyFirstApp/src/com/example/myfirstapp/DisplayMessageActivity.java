@@ -6,7 +6,6 @@ import android.app.Activity;
 //import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -19,6 +18,8 @@ public class DisplayMessageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_display_message);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// Show the Up button in the action bar.
 		setupActionBar();
 		// Get Text from intent
@@ -49,7 +50,7 @@ public class DisplayMessageActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
-	        case R.id.action_search:
+	    case R.id.action_search:
 	            openSearch();
 	            return true;
 	        case R.id.action_settings:
